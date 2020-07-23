@@ -13,3 +13,6 @@
 
 docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t https://juice-shop.herokuapp.com -g gen.conf -r testreport.html
 
+
+test code in search-juiceshop.json
+
