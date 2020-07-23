@@ -1,0 +1,10 @@
+{
+    "name": "zap-homework",
+    "version": "1.0.0",
+    "description": "Dockerized node.js app",
+    "main": "index.js",
+    "dependencies": {
+        "zaproxy": "1.0.1",
+        "http": "0.0.1-security"
+    }
+}
