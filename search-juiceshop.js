@@ -52,4 +52,34 @@ zaproxy.spider.scan(juiceShopHost, "", true, "Juice-shop", false, (err, resp) =>
 });
 
 
-console.log("================= Step two - scan juice shop ======================")
+console.log("================= Step three - alert summary ======================")
+zaproxy.core.alertsSummary(juiceShopHost, (err, resp) => {
+  // All errors are handled here
+  if (err) {
+      console.info('Error:',err);
+      let error = { statusCode: 422, error: err };
+      callback(error);
+  }
+  // All valid responses are handled here
+  if (resp) {
+      console.info('Response:',resp);
+      let result = resp.scan;
+      callback(null, result);
+  }
+});
+
+console.log("================= Step four - report ======================")
+zaproxy.core.htmlreport((err, resp) => {
+  // All errors are handled here
+  if (err) {
+      console.info('Error:',err);
+      let error = { statusCode: 422, error: err };
+      callback(error);
+  }
+  // All valid responses are handled here
+  if (resp) {
+      console.info('Response:',resp);
+      let result = resp.scan;
+      callback(null, result);
+  }
+});
